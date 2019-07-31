@@ -1,0 +1,88 @@
+.App {
+  
+}
+
+.Grid {
+  display: grid;
+  width: 500px;
+  height: 500px;
+  perspective: 1000px; 
+  background-size: cover;
+}
+
+.Grid.imgHidden {
+  background-size: 0 0;
+}
+
+.Square {
+  width: 100%;
+  height: 100%;
+  background-color:#ff8383;
+  border: 1px solid black;  
+  box-sizing: border-box;
+}
+
+.Square.hidden {
+  animation: hide 0.7s;
+  animation-fill-mode: forwards;
+}
+
+.Square.shown {
+  animation: show 0.7s;
+}
+
+@keyframes hide {
+  from {
+    transform: rotate3d(0, 1, 0, 0deg);
+    background-color: #ff8383;
+    border: 1px solid black;
+  }
+  to {
+    transform: rotate3d(0, 1, 0, 90deg);
+    background-color: transparent;
+    border: 0;
+  }
+}
+
+@keyframes show {
+  from {
+    transform: rotate3d(0, 1, 0, 90deg);
+    background-color: transparent;
+    border: 0;
+  }
+  to {
+    transform: rotate3d(0, 1, 0, 0deg);
+    background-color: #ff8383;
+    border: 1px solid black;
+  }  
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 40vmin;
+  pointer-events: none;
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
